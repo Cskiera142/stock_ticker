@@ -1,0 +1,22 @@
+.tickup {
+  color: green;
+}
+
+.tickdown {
+  color: red;
+}
+
+.wrapper {
+}
+thead {
+  width: 100vw;
+  /* width: 100%; */
+  display: grid;
+  grid-template-columns: repeat(4, 100px [row-start] 250px [row-end]) 10px;
+}
+
+td {
+  width: 100%;
+  display: grid;
+  grid-template-columns: (5, 2fr);
+}

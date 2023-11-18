@@ -29,13 +29,24 @@ function draw() {
   console.log(stock);
   tbody.innerHTML = "";
 
-  for (let i = 1; i <= stock.length; i++) {
+  for (let i = 0; i < stock.length; i++) {
     const stockTickerData = stock[i];
 
     let tr = document.createElement("tr");
     for (const propName in stockTickerData) {
       let td = document.createElement("td");
       td.textContent = stockTickerData[propName];
+
+      if (propName === "variation") {
+        const variationValue = parseFloat(stockTickerData[propName]);
+
+        if (variationValue > 0) {
+          td.classList.add("tickup");
+        } else if (variationValue < 0) {
+          td.classList.add("tickdown");
+        }
+      }
+
       tr.append(td);
     }
     tbody.append(tr);
