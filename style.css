@@ -6,17 +6,18 @@
   color: red;
 }
 
-.wrapper {
-}
-thead {
+tr {
   width: 100vw;
-  /* width: 100%; */
+  flex-wrap: nowrap;
   display: grid;
-  grid-template-columns: repeat(4, 100px [row-start] 250px [row-end]) 10px;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  align-content: center;
 }
 
-td {
-  width: 100%;
-  display: grid;
-  grid-template-columns: (5, 2fr);
+tr :nth-child(odd) {
+  background-color: rgb(210, 213, 216);
+}
+tr :nth-child(even) {
+  background-color: #fff;
 }
